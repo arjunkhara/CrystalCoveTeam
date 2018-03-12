@@ -457,6 +457,11 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1056457389}
+    - target: {fileID: 114871174819459808, guid: f6cea7f604d1f9c45a6bfdc15ab658b7,
+        type: 2}
+      propertyPath: Hologram
+      value: 
+      objectReference: {fileID: 744743880}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f6cea7f604d1f9c45a6bfdc15ab658b7, type: 2}
   m_IsPrefabParent: 0
@@ -787,6 +792,11 @@ Prefab:
       propertyPath: chaseDistance
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114314550584731418, guid: 47e074c2f09d1fb419b1c563b90c9f82,
+        type: 2}
+      propertyPath: Hologram
+      value: 
+      objectReference: {fileID: 744743880}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 47e074c2f09d1fb419b1c563b90c9f82, type: 2}
   m_IsPrefabParent: 0
