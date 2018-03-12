@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{2079d5b8-7925-4fe3-8d35-e87393659472}">
+        <property name="assetPath">
+            <value>MonsterRoar5.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>1.3373242630385487</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{bd571bb1-13ab-419f-84cc-11e7a68ea8b3}</destination>
+        </relationship>
+    </object>
+</objects>

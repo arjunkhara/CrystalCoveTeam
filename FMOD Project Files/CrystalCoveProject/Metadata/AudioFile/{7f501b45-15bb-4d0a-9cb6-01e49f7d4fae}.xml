@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{7f501b45-15bb-4d0a-9cb6-01e49f7d4fae}">
+        <property name="assetPath">
+            <value>Tinker_foley3.mp3</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>1</value>
+        </property>
+        <property name="length">
+            <value>0.4179591836734694</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{bd571bb1-13ab-419f-84cc-11e7a68ea8b3}</destination>
+        </relationship>
+    </object>
+</objects>
