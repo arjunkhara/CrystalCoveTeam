@@ -19,6 +19,7 @@ public class Drill : MonoBehaviour {
         PC = FindObjectOfType<PlayerController>();
         isdrilling = false;
         Timer = 50;
+        Readytodrill = false;
     }
 
     void Update()
@@ -39,7 +40,7 @@ public class Drill : MonoBehaviour {
             Timer = 0;
         }
 
-        if (isdrilling == true && Readytodrill == true) ;
+        if (isdrilling == true && Readytodrill == true) 
         {
             Timer -= turnTimer * Time.deltaTime;
         }
