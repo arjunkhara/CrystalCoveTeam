@@ -69,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1142110008128352}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.1, y: 0.7324218, z: 2.27}
+  m_LocalPosition: {x: -6.473, y: 1.086, z: 2.27}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4094945691212230}
@@ -191,6 +191,9 @@ MonoBehaviour:
   chaseDistance: 5
   stopChaseDistance: 8
   SpawnPoint: {fileID: 0}
+  Enemy: {fileID: 1142110008128352}
+  Hologram: {fileID: 0}
+  HologramDistance: 0
 --- !u!135 &135499169393559926
 SphereCollider:
   m_ObjectHideFlags: 1
