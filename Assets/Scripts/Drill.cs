@@ -13,6 +13,7 @@ public class Drill : MonoBehaviour {
     public bool Readytodrill;
     public bool isdrilling;
 
+    DrillEnergy DE;
 
     private void Start()
     {
@@ -20,6 +21,7 @@ public class Drill : MonoBehaviour {
         isdrilling = false;
         Timer = 50;
         Readytodrill = false;
+        DE = GetComponent<DrillEnergy>();
     }
 
     void Update()
@@ -38,6 +40,7 @@ public class Drill : MonoBehaviour {
         if (Timer <= 0)
         {
             Timer = 0;
+            DE.currentEnergy += 10;
         }
 
         if (isdrilling == true && Readytodrill == true) 
