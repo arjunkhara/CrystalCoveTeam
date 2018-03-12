@@ -19,4 +19,17 @@ public class DrillEnergy : MonoBehaviour {
 	void OnEnable () {
         EnergySlider.value = currentEnergy;
 	}
+
+    private void Update()
+    {
+        if(currentEnergy >= 100)
+        {
+            currentEnergy = 100;
+        }
+
+        else if (currentEnergy <= 0)
+        {
+            currentEnergy = 0;
+        }
+    }
 }
