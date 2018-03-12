@@ -8,9 +8,14 @@ public class Drill : MonoBehaviour {
     public bool reverse = false;
     PlayerController PC;
 
+    public float Timer;
+    public float turnTimer = 1;
+
+
     private void Start()
     {
         PC = FindObjectOfType<PlayerController>();
+        turnTimer = 1;
     }
 
     void Update()
@@ -24,8 +29,27 @@ public class Drill : MonoBehaviour {
         {
             PC.movespeed = 5;
         }
-
+        if (Timer <= 0)
+        {
+            Timer = 0;
+        }
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag ("Crysal"))
+        {
+            Timer = -turnTimer * Time.deltaTime;
+        }
+    }
+
+    private void OnTriggerSay(Collider other)
+    {
+        if (other.CompareTag("Crysal"))
+        {
+            Timer = -turnTimer * Time.deltaTime;
+        }
     }
 
 
