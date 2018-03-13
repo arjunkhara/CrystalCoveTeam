@@ -31,7 +31,7 @@ public class CrystalScript : MonoBehaviour {
         if(Timer <= 0)
         {
             Debug.Log("Crystal Destroyed");
-            DrillEnergyScript.OurEnergy +=10;
+            DrillEnergyScript.OurEnergy += 10;
         }
 		
 
