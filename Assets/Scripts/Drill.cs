@@ -8,8 +8,7 @@ public class Drill : MonoBehaviour {
     public bool reverse = false;
     PlayerController PC;
 
-    public float Timer;
-    public float turnTimer = 10;
+
     public bool Readytodrill;
     public bool isdrilling;
 
@@ -19,7 +18,6 @@ public class Drill : MonoBehaviour {
     {
         PC = FindObjectOfType<PlayerController>();
         isdrilling = false;
-        Timer = 50;
         Readytodrill = false;
         DE = GetComponent<DrillEnergy>();
     }
@@ -36,16 +34,6 @@ public class Drill : MonoBehaviour {
         {
             isdrilling = false;
             PC.movespeed = 5;
-        }
-        if (Timer <= 0)
-        {
-            Timer = 0;
-            DE.currentEnergy += 10;
-        }
-
-        if (isdrilling == true && Readytodrill == true) 
-        {
-            Timer -= turnTimer * Time.deltaTime;
         }
         
     }
