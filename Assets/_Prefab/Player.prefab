@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 65890319230754992}
   - component: {fileID: 23506302702142602}
   - component: {fileID: 114712119858986822}
+  - component: {fileID: 114032114391895710}
   m_Layer: 0
   m_Name: Drill
   m_TagString: Untagged
@@ -411,8 +412,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1097818228362816}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.72, y: 0.1648438, z: 0.35999966}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalPosition: {x: 0.72, y: 0.1648438, z: 2.529}
+  m_LocalScale: {x: 0.59999955, y: 0.6, z: 4.937352}
   m_Children: []
   m_Father: {fileID: 4861278278864058}
   m_RootOrder: 2
@@ -984,7 +985,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1097818228362816}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -1032,6 +1033,21 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114032114391895710
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1097818228362816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beebcb110d3b2c24493e4d077cf3f50a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingenergy: 0
+  currentEnergy: 0
+  EnergySlider: {fileID: 114722743112066582}
+  FillImage: {fileID: 114293306219075058}
 --- !u!114 &114293306219075058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1071,7 +1087,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Holo: {fileID: 1481201489942546}
-  ison: 0
 --- !u!114 &114381955058073904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1134,6 +1149,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 99
   reverse: 0
+  Readytodrill: 0
+  isdrilling: 0
 --- !u!114 &114722743112066582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -24929,7 +24946,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1420683341298980}
-  m_LocalRotation: {x: 0.00002841115, y: -0.011693297, z: -0.00022640402, w: 0.99993163}
+  m_LocalRotation: {x: 0.00005358611, y: -0.011693209, z: 0.0019263936, w: 0.9999298}
   m_LocalPosition: {x: 0, y: 0, z: -9.607}
   m_LocalScale: {x: 0.009, y: 0.009, z: 1}
   m_Children:
@@ -24937,10 +24954,10 @@ RectTransform:
   - {fileID: 224736407529034256}
   m_Father: {fileID: 224024316127278712}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0.003, y: -1.34, z: -0.026}
+  m_LocalEulerAnglesHint: {x: 0.009000001, y: -1.34, z: 0.22100002}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.063, y: -0.275}
+  m_AnchoredPosition: {x: 4.059, y: -0.26593387}
   m_SizeDelta: {x: 32.2642, y: 62.3847}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224641368045461634

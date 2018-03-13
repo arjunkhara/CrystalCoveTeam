@@ -20,7 +20,18 @@ public class CrystalScript : MonoBehaviour {
 	void Update () {
         if (DrillScript.Readytodrill == true && DrillScript.isdrilling == true)
         {
+            Timer -= Time.deltaTime;
+        }
 
+        else
+        {
+            Timer = 3;
+        }
+
+        if(Timer <= 0)
+        {
+            Debug.Log("Crystal Destroyed");
+            DrillEnergyScript.currentEnergy += 10;
         }
 		
 
