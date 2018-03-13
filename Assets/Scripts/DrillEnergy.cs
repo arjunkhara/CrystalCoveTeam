@@ -13,15 +13,28 @@ public class DrillEnergy : MonoBehaviour {
     public Color m_ZeroHealthColor = Color.red;
 
 
-    public Transform FirePulse;
-    public GameObject Pulse;
+    public Transform SpawnPulse;
+    public GameObject PulseClone;
+    public bool isFiring;
+ 
 
 
     void Start () {
         OurEnergy = startingenergy;
+        isFiring = false;
 	}
-	
-	void OnEnable () {
+
+    public void FirePulse()
+    {
+
+        PulseClone = (GameObject)Instantiate(PulseClone, SpawnPulse.position, SpawnPulse.rotation);
+        OurEnergy = 0;
+        SetHealthUI();
+        isFiring = true;
+    }
+
+
+    void OnEnable () {
         SetHealthUI();
         EnergySlider.value = OurEnergy;
 	}
@@ -38,11 +51,21 @@ public class DrillEnergy : MonoBehaviour {
         {
             OurEnergy = 0;
         }
+
+        if (OurEnergy >= 100 && Input.GetMouseButton(1) && Input.GetMouseButton(0))
+        {
+            FirePulse();
+           
+        }
+        else
+        {
+            isFiring = false;
+        }
     }
     private void SetHealthUI()
     {
         EnergySlider.value = OurEnergy;
-        FillImage.color = Color.Lerp(m_ZeroHealthColor, m_FullHealthColor, OurEnergy/ startingenergy);
+       
     }
 
 }

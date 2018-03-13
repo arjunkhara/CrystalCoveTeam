@@ -40,14 +40,14 @@ public class Drill : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Untagged")
+        if(other.gameObject.tag == "Crystal")
         {
             Readytodrill = true;
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Untagged")
+        if (other.gameObject.tag == "Crystal")
         {
             Readytodrill = false;
         }
