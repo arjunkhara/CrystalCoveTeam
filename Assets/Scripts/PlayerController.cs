@@ -14,6 +14,11 @@ public class PlayerController : MonoBehaviour {
     LevelManager LM;
 
 
+
+
+
+
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
