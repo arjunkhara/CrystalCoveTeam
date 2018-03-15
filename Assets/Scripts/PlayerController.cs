@@ -28,7 +28,9 @@ public class PlayerController : MonoBehaviour {
     public bool Canister2hasbeenused;
     public bool Canister3hasbeenused;
 
+    public float TimeintheAir;
 
+    public bool isflying;
 
 
 
@@ -44,6 +46,8 @@ public class PlayerController : MonoBehaviour {
         Canister1hasbeenused = false;
         Canister2hasbeenused = false;
         Canister3hasbeenused = false;
+        TimeintheAir = 2;
+        isflying = false;
  
     }
 
@@ -60,9 +64,12 @@ public class PlayerController : MonoBehaviour {
     private void Update()
     {
 
-        
+        if(Canister1hasbeenused == false && Canister2hasbeenused == false && Canister3hasbeenused == false && Input.GetKey(KeyCode.Space))
+        {
+            Canister1hasbeenused = true;
 
 
+        }
 
 
 

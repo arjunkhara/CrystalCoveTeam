@@ -1276,7 +1276,7 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 1
-  m_WholeNumbers: 1
+  m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1852,7 +1852,7 @@ Prefab:
     - target: {fileID: 224008848000897322, guid: c6352c26bdd3caa499b4edff5a23198c,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224008848000897322, guid: c6352c26bdd3caa499b4edff5a23198c,
         type: 2}
@@ -1887,6 +1887,11 @@ Prefab:
         type: 2}
       propertyPath: m_Value
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114722743112066582, guid: c6352c26bdd3caa499b4edff5a23198c,
+        type: 2}
+      propertyPath: m_WholeNumbers
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c6352c26bdd3caa499b4edff5a23198c, type: 2}
@@ -4217,7 +4222,7 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 1
-  m_WholeNumbers: 1
+  m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
