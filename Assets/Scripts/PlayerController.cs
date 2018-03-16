@@ -17,14 +17,23 @@ public class PlayerController : MonoBehaviour {
     LevelManager LM;
 
 
-    public int FullCanister = 1;
-    public int CurrentCanister1Energy;
-    public Slider Canister1;
+
+
+
     public bool Canister1hasbeenused;
-
-
     public bool isCanister1beingused;
     public float TimeofBoost = 2;
+
+    public bool Canister2hasbeenused;
+    public bool isCanister2beingused;
+    public float TimeofBoost2 = 2;
+
+    public bool Canister3hasbeenused;
+    public bool isCanister3beingused;
+    public float TimeofBoost3 = 2;
+
+
+
 
 
     private void Awake()
@@ -33,7 +42,6 @@ public class PlayerController : MonoBehaviour {
         MovementInputValue = 0f;
         LeftRightInputValue = 0f;
         LM = FindObjectOfType<LevelManager>();
-        CurrentCanister1Energy = FullCanister;
         Canister1hasbeenused = false;
         isCanister1beingused = false;
         
@@ -45,8 +53,7 @@ public class PlayerController : MonoBehaviour {
     {
         MovementAxisName = "Vertical";
         LeftRightAxisName = "Horizontal";
-        CurrentCanister1Energy = FullCanister;
-
+ 
     }
 
 
@@ -74,10 +81,61 @@ public class PlayerController : MonoBehaviour {
 
 
 
+    void BoostTwo()
+    {
+        if (Canister2hasbeenused == false &&    Canister1hasbeenused == true && Input.GetKey(KeyCode.Space))
+        {
+            isCanister2beingused = true;
+            if (isCanister2beingused == true)
+            {
+                TimeofBoost2 -= Time.deltaTime;
+                movespeed = 10;
+
+            }
+
+            if (TimeofBoost2 <= 0)
+            {
+                TimeofBoost2 = 0;
+                isCanister2beingused = false;
+                Canister2hasbeenused = true;
+                movespeed = 5;
+            }
+        }
+    }
+
+
+
+
+    void BoostThree()
+    {
+        if (Canister3hasbeenused == false && Canister2hasbeenused == true && Canister1hasbeenused == true && Input.GetKey(KeyCode.Space))
+        {
+            isCanister3beingused = true;
+            if (isCanister3beingused == true)
+            {
+                TimeofBoost3 -= Time.deltaTime;
+                movespeed = 10;
+
+            }
+
+            if (TimeofBoost3 <= 0)
+            {
+                TimeofBoost3 = 0;
+                isCanister3beingused = false;
+                Canister3hasbeenused = true;
+                movespeed = 5;
+            }
+        }
+    }
+
+
 
     private void Update()
     {
         BoostOne();
+        BoostTwo();
+
+
 
         if(LM.IsthereaDrone == true)
         {
@@ -108,9 +166,5 @@ public class PlayerController : MonoBehaviour {
         rb.MovePosition(rb.position + LeftRight);
     }
 
-    private void SetHealthUI()
-    {
-        Canister1.value = CurrentCanister1Energy;
-    }
 
 }
