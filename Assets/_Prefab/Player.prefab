@@ -1274,6 +1274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Holo: {fileID: 1481201489942546}
+  HoloisOn: 0
 --- !u!114 &114381955058073904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1287,12 +1288,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movespeed: 5
   Drone: {fileID: 0}
-  FullCanister: 1
-  CurrentCanister1Energy: 0
-  Canister1: {fileID: 114722743112066582}
   Canister1hasbeenused: 0
   isCanister1beingused: 0
   TimeofBoost: 2
+  Canister2hasbeenused: 0
+  isCanister2beingused: 0
+  TimeofBoost2: 2
+  Canister3hasbeenused: 0
+  isCanister3beingused: 0
+  TimeofBoost3: 2
 --- !u!114 &114382284079121902
 MonoBehaviour:
   m_ObjectHideFlags: 1

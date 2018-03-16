@@ -11,28 +11,30 @@ public class EnemyChase : MonoBehaviour
   
     public float playerDistance;
     public float HologramDistance;
-
     public float rotationDampling;
-
     public float moveSpeed;
-
     public float lookDistance;
-
     public float chaseDistance;
-
     public float stopChaseDistance;
+
     MonsterPatrol MP;
     public Transform SpawnPoint;
-
     bool AtStartingPosition;
-
     public GameObject Enemy;
+
+    Hologram HGM;
+
+
+
 
 
     private void Start()
     {
         MP = GetComponent<MonsterPatrol>();
         Enemy.transform.position = SpawnPoint.transform.position;
+        HGM = FindObjectOfType<Hologram>();
+
+
     }
 
     void Update()
@@ -47,20 +49,19 @@ public class EnemyChase : MonoBehaviour
         HologramDistance = Vector3.Distance(Hologram.position, transform.position);
 
 
-        if(HologramDistance < lookDistance)
+        if(HologramDistance < lookDistance && HGM.HoloisOn == true)
         {
             LookatHologram();
         }
 
 
-        if (playerDistance < lookDistance)
+        if (playerDistance < lookDistance && HGM.HoloisOn == false)
         {
             lookAtPlayer();
         }
 
-        if (playerDistance < chaseDistance || HologramDistance < chaseDistance)
+        if (playerDistance < chaseDistance && HGM.HoloisOn == false || HologramDistance < chaseDistance && HGM.HoloisOn == false)
         {
-
             chase();
         }
 

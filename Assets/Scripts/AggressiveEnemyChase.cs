@@ -18,10 +18,12 @@ public class AggressiveEnemyChase : MonoBehaviour {
     public float stopChaseDistance;
     MonsterPatrol MP;
 
+    Hologram HGM;
 
     private void Start()
     {
         MP = GetComponent<MonsterPatrol>();
+        HGM = FindObjectOfType<Hologram>();
     }
 
     void Update()
@@ -29,31 +31,22 @@ public class AggressiveEnemyChase : MonoBehaviour {
 
         playerDistance = Vector3.Distance(player.position, transform.position);
 
-        if (playerDistance < lookDistance)
-        {
-            lookAtPlayer();
-        }
 
-        if (playerDistance < chaseDistance)
+        if (playerDistance < lookDistance && HGM.HoloisOn == false || HologramDistance < lookDistance && HGM.HoloisOn == true)
         {
 
             chase();
             MP.enabled = false;
         }
 
-        if (playerDistance > stopChaseDistance)
+        if (playerDistance > stopChaseDistance && HGM.HoloisOn == false)
         {
             MP.enabled = true;
         }
 
     }
 
-    void lookAtPlayer()
-    {
-
-        Quaternion rotation = Quaternion.LookRotation(player.position - transform.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationDampling);
-    }
+    
 
     void chase()
     {
