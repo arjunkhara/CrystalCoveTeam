@@ -55,8 +55,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1001338999714128}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.1, y: 0.7324218, z: 2.27}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 33.4047, y: 59.772243, z: -31.091713}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4872700032121596}
@@ -170,11 +170,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  Hologram: {fileID: 0}
   playerDistance: 0
+  HologramDistance: 0
   rotationDampling: 20
   moveSpeed: 3
-  lookDistance: 10
-  chaseDistance: 5
+  lookDistance: 15
+  chaseDistance: 10
   stopChaseDistance: 8
 --- !u!114 &114699778071785074
 MonoBehaviour:
