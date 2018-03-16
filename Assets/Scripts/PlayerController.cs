@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
+
+
     public float movespeed;
     private string MovementAxisName;
     private string LeftRightAxisName;
@@ -17,21 +19,12 @@ public class PlayerController : MonoBehaviour {
 
     public int FullCanister = 1;
     public int CurrentCanister1Energy;
-    public int CurrentCanister2Energy;
-    public int CurrentCanister3Energy;
-
     public Slider Canister1;
-    public Slider Canister2;
-    public Slider Canister3;
-
     public bool Canister1hasbeenused;
-    public bool Canister2hasbeenused;
-    public bool Canister3hasbeenused;
 
-    public float TimeintheAir;
 
-    public bool isflying;
-
+    public bool isCanister1beingused;
+    public float TimeofBoost = 2;
 
 
     private void Awake()
@@ -41,13 +34,10 @@ public class PlayerController : MonoBehaviour {
         LeftRightInputValue = 0f;
         LM = FindObjectOfType<LevelManager>();
         CurrentCanister1Energy = FullCanister;
-        CurrentCanister2Energy = FullCanister;
-        CurrentCanister3Energy = FullCanister;
         Canister1hasbeenused = false;
-        Canister2hasbeenused = false;
-        Canister3hasbeenused = false;
-        TimeintheAir = 2;
-        isflying = false;
+        isCanister1beingused = false;
+        
+
  
     }
 
@@ -56,24 +46,38 @@ public class PlayerController : MonoBehaviour {
         MovementAxisName = "Vertical";
         LeftRightAxisName = "Horizontal";
         CurrentCanister1Energy = FullCanister;
-        CurrentCanister2Energy = FullCanister;
-        CurrentCanister3Energy = FullCanister;
 
     }
 
- 
+
+    void BoostOne()
+    {
+        if(Canister1hasbeenused == false && Input.GetKey(KeyCode.Space))
+        {
+            isCanister1beingused = true;
+            if(isCanister1beingused == true)
+            {
+                TimeofBoost -= Time.deltaTime;
+                movespeed = 10;
+                
+            }
+
+            if(TimeofBoost <= 0)
+            {
+                TimeofBoost = 0;
+                isCanister1beingused = false;
+                Canister1hasbeenused = true;
+                movespeed = 5;
+            }
+        }
+    }
+
+
+
 
     private void Update()
     {
-
-        if(Canister1hasbeenused == false && Canister2hasbeenused == false && Canister3hasbeenused == false && Input.GetKey(KeyCode.Space))
-        {
-            Canister1hasbeenused = true;
-
-
-        }
-
-
+        BoostOne();
 
         if(LM.IsthereaDrone == true)
         {
@@ -81,10 +85,10 @@ public class PlayerController : MonoBehaviour {
             movespeed = 0;
         }
 
-        else if(LM.IsthereaDrone == false)
+
+        else
         {
             Drone.SetActive(false);
-            movespeed = 5;
         }
         MovementInputValue = Input.GetAxis(MovementAxisName);
         LeftRightInputValue = Input.GetAxis(LeftRightAxisName);
@@ -107,9 +111,6 @@ public class PlayerController : MonoBehaviour {
     private void SetHealthUI()
     {
         Canister1.value = CurrentCanister1Energy;
-        Canister2.value = CurrentCanister2Energy;
-        Canister3.value = CurrentCanister3Energy;
-
     }
 
 }
