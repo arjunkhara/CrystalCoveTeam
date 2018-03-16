@@ -1035,6 +1035,11 @@ Prefab:
       propertyPath: SpawnPoint
       value: 
       objectReference: {fileID: 2092024405}
+    - target: {fileID: 114871174819459808, guid: f6cea7f604d1f9c45a6bfdc15ab658b7,
+        type: 2}
+      propertyPath: Hologram
+      value: 
+      objectReference: {fileID: 1389547662}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f6cea7f604d1f9c45a6bfdc15ab658b7, type: 2}
   m_IsPrefabParent: 0
@@ -4037,6 +4042,11 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!4 &1389547662 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4260142953708728, guid: c6352c26bdd3caa499b4edff5a23198c,
+    type: 2}
+  m_PrefabInternal: {fileID: 744743870}
 --- !u!4 &1399415436 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4416219217745450, guid: 47e074c2f09d1fb419b1c563b90c9f82,

@@ -184,7 +184,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  Hologram: {fileID: 0}
   playerDistance: 0
+  HologramDistance: 0
   rotationDampling: 20
   moveSpeed: 3
   lookDistance: 10

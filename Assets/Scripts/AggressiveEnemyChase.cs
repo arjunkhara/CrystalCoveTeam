@@ -8,7 +8,9 @@ public class AggressiveEnemyChase : MonoBehaviour {
 
 
     public Transform player;
+    public Transform Hologram;
     public float playerDistance;
+    public float HologramDistance;
     public float rotationDampling;
     public float moveSpeed;
     public float lookDistance;
