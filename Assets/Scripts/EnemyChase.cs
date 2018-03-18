@@ -24,6 +24,7 @@ public class EnemyChase : MonoBehaviour
 
     Hologram HGM;
 
+    public Animator PassiveEnemyAnimator;
 
 
 
@@ -33,16 +34,21 @@ public class EnemyChase : MonoBehaviour
         MP = GetComponent<MonsterPatrol>();
         Enemy.transform.position = SpawnPoint.transform.position;
         HGM = FindObjectOfType<Hologram>();
+        PassiveEnemyAnimator = GetComponent<Animator>();
 
 
     }
 
     void Update()
     {
+
+     
         if (Enemy.transform.position == SpawnPoint.transform.position)
         {
             MP.enabled = false;
-        }
+            PassiveEnemyAnimator.SetBool("IsItIdle", true);
+            PassiveEnemyAnimator.SetBool("IsItWalking", false);
+         }
 
 
         playerDistance = Vector3.Distance(player.position, transform.position);
@@ -52,17 +58,23 @@ public class EnemyChase : MonoBehaviour
         if(HologramDistance < lookDistance && HGM.HoloisOn == true)
         {
             LookatHologram();
+            PassiveEnemyAnimator.SetBool("IsItIdle", true);
+            PassiveEnemyAnimator.SetBool("IsItWalking", false);
         }
 
 
         if (playerDistance < lookDistance && HGM.HoloisOn == false)
         {
             lookAtPlayer();
+            PassiveEnemyAnimator.SetBool("IsItIdle", true);
+            PassiveEnemyAnimator.SetBool("IsItWalking", false);
         }
 
         if (playerDistance < chaseDistance && HGM.HoloisOn == false || HologramDistance < chaseDistance && HGM.HoloisOn == false)
         {
             chase();
+            PassiveEnemyAnimator.SetBool("IsItIdle", false);
+            PassiveEnemyAnimator.SetBool("IsItWalking", true);
         }
 
         if (playerDistance > stopChaseDistance && Enemy.transform.position != SpawnPoint.transform.position || HologramDistance > stopChaseDistance && Enemy.transform.position != SpawnPoint.transform.position)
@@ -91,6 +103,8 @@ public class EnemyChase : MonoBehaviour
     void chase()
     {
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+        PassiveEnemyAnimator.SetBool("IsItIdle", false);
+        PassiveEnemyAnimator.SetBool("IsItWalking", true);
 
     }
 }
