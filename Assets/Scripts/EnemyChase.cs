@@ -46,8 +46,7 @@ public class EnemyChase : MonoBehaviour
         if (Enemy.transform.position == SpawnPoint.transform.position)
         {
             MP.enabled = false;
-            PassiveEnemyAnimator.SetBool("IsItIdle", true);
-            PassiveEnemyAnimator.SetBool("IsItWalking", false);
+  
          }
 
 
@@ -58,23 +57,20 @@ public class EnemyChase : MonoBehaviour
         if(HologramDistance < lookDistance && HGM.HoloisOn == true)
         {
             LookatHologram();
-            PassiveEnemyAnimator.SetBool("IsItIdle", true);
-            PassiveEnemyAnimator.SetBool("IsItWalking", false);
+     
         }
 
 
         if (playerDistance < lookDistance && HGM.HoloisOn == false)
         {
             lookAtPlayer();
-            PassiveEnemyAnimator.SetBool("IsItIdle", true);
-            PassiveEnemyAnimator.SetBool("IsItWalking", false);
+    
         }
 
         if (playerDistance < chaseDistance && HGM.HoloisOn == false || HologramDistance < chaseDistance && HGM.HoloisOn == false)
         {
             chase();
-            PassiveEnemyAnimator.SetBool("IsItIdle", false);
-            PassiveEnemyAnimator.SetBool("IsItWalking", true);
+           
         }
 
         if (playerDistance > stopChaseDistance && Enemy.transform.position != SpawnPoint.transform.position || HologramDistance > stopChaseDistance && Enemy.transform.position != SpawnPoint.transform.position)
@@ -89,6 +85,8 @@ public class EnemyChase : MonoBehaviour
 
         Quaternion rotation = Quaternion.LookRotation(player.position - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationDampling);
+        PassiveEnemyAnimator.SetBool("IsItIdle", true);
+        PassiveEnemyAnimator.SetBool("IsItWalking", false);
     }
 
 
@@ -96,6 +94,8 @@ public class EnemyChase : MonoBehaviour
     {
         Quaternion rotation = Quaternion.LookRotation(Hologram.position - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationDampling);
+        PassiveEnemyAnimator.SetBool("IsItIdle", true);
+        PassiveEnemyAnimator.SetBool("IsItWalking", false);
     }
 
 
@@ -105,6 +105,7 @@ public class EnemyChase : MonoBehaviour
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
         PassiveEnemyAnimator.SetBool("IsItIdle", false);
         PassiveEnemyAnimator.SetBool("IsItWalking", true);
+
 
     }
 }

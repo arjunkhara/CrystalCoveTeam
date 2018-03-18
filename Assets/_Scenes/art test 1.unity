@@ -627,6 +627,16 @@ Prefab:
       propertyPath: PatrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 2092024405}
+    - target: {fileID: 114079567171854432, guid: 9f61832793b0e7044ab68a7f796dff2b,
+        type: 2}
+      propertyPath: moveSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114079567171854432, guid: 9f61832793b0e7044ab68a7f796dff2b,
+        type: 2}
+      propertyPath: chaseDistance
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f61832793b0e7044ab68a7f796dff2b, type: 2}
   m_IsPrefabParent: 0
