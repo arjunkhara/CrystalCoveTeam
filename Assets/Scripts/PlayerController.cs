@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour {
 
 
+    public Animator Anim;
+
     public float movespeed;
     private string MovementAxisName;
     private string LeftRightAxisName;
@@ -46,6 +48,8 @@ public class PlayerController : MonoBehaviour {
         LM = FindObjectOfType<LevelManager>();
         Canister1hasbeenused = false;
         isCanister1beingused = false;
+
+        Anim = FindObjectOfType<Animator>();
         
 
  
@@ -55,6 +59,7 @@ public class PlayerController : MonoBehaviour {
     {
         MovementAxisName = "Vertical";
         LeftRightAxisName = "Horizontal";
+        Anim.SetBool("isDrilling", false);
  
     }
 
@@ -137,9 +142,27 @@ public class PlayerController : MonoBehaviour {
         BoostOne();
         BoostTwo();
 
+        if (Input.GetMouseButton(1))
+        {
+            Anim.SetBool("isDrilling", true);
+            Anim.SetBool("isWalking", false);
+        }
+
+       else if (Input.GetKey(KeyCode.W))
+        {
+            Anim.SetBool("isWalking", true);
+            Anim.SetBool("isDrilling", false);
+        }
+
+        else
+        {
+            Anim.SetBool("isDrilling", false);
+            Anim.SetBool("isWalking", false);
+        }
 
 
-        if(LM.IsthereaDrone == true)
+
+        if (LM.IsthereaDrone == true)
         {
             Drone.SetActive(true);
             movespeed = 0;
@@ -152,6 +175,7 @@ public class PlayerController : MonoBehaviour {
         }
         MovementInputValue = Input.GetAxis(MovementAxisName);
         LeftRightInputValue = Input.GetAxis(LeftRightAxisName);
+
     }
 
     private void FixedUpdate()
@@ -166,6 +190,8 @@ public class PlayerController : MonoBehaviour {
 
         Vector3 LeftRight = transform.right * LeftRightInputValue * movespeed * Time.deltaTime;
         rb.MovePosition(rb.position + LeftRight);
+
+        
     }
 
 

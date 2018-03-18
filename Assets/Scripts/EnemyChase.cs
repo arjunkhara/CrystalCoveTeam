@@ -76,6 +76,8 @@ public class EnemyChase : MonoBehaviour
         if (playerDistance > stopChaseDistance && Enemy.transform.position != SpawnPoint.transform.position || HologramDistance > stopChaseDistance && Enemy.transform.position != SpawnPoint.transform.position)
         {
             MP.enabled = true;
+            PassiveEnemyAnimator.SetBool("IsItIdle", true);
+            PassiveEnemyAnimator.SetBool("IsItWalking", false);
         }
 
     }
