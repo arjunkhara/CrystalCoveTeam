@@ -18,6 +18,11 @@ public class PlayerController : MonoBehaviour {
     public GameObject Drone;
     LevelManager LM;
 
+    public bool ReadytoDrill;
+    public bool touchingCrystal;
+
+    DrillEnergy DE;
+
 
 
 
@@ -50,6 +55,12 @@ public class PlayerController : MonoBehaviour {
         isCanister1beingused = false;
 
         Anim = GetComponent<Animator>();
+
+
+        ReadytoDrill = false;
+        touchingCrystal = false;
+
+        DE = GetComponent<DrillEnergy>();
         
 
  
@@ -59,7 +70,6 @@ public class PlayerController : MonoBehaviour {
     {
         MovementAxisName = "Vertical";
         LeftRightAxisName = "Horizontal";
-        Anim.SetBool("isDrilling", false);
  
     }
 
@@ -142,36 +152,79 @@ public class PlayerController : MonoBehaviour {
         BoostOne();
         BoostTwo();
 
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1) && Input.GetMouseButton(2) && LM.IsthereaDrone == false && DE.OurEnergy ==100)
+        {
+            Anim.SetBool("isDrilling", false);
+            Anim.SetBool("isWalking", false);
+            Anim.SetBool("isWalkingRight", false);
+            Anim.SetBool("isWalkingLeft", false);
+            Anim.SetBool("isWalkingBack", false);
+            Anim.SetBool("Shoot", true);
+            ReadytoDrill = false;
+            movespeed = 0;
+        }
+
+
+        if (Input.GetMouseButton(1) && LM.IsthereaDrone == false)
         {
             Anim.SetBool("isDrilling", true);
             Anim.SetBool("isWalking", false);
             Anim.SetBool("isWalkingRight", false);
             Anim.SetBool("isWalkingLeft", false);
+            Anim.SetBool("isWalkingBack", false);
+            Anim.SetBool("Shoot", false);
+            ReadytoDrill = true;
+            movespeed = 0;
         }
 
-       else if (Input.GetKey(KeyCode.W))
+       else if (Input.GetKey(KeyCode.W) && LM.IsthereaDrone == false)
         {
             Anim.SetBool("isWalking", true);
             Anim.SetBool("isDrilling", false);
             Anim.SetBool("isWalkingRight", false);
             Anim.SetBool("isWalkingLeft", false);
+            Anim.SetBool("isWalkingBack", false);
+            Anim.SetBool("Shoot", false);
+            ReadytoDrill = false;
+            movespeed = 5;
+
+
         }
 
-        else if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A) && LM.IsthereaDrone == false)
         {
             Anim.SetBool("isWalking", false);
             Anim.SetBool("isDrilling", false);
             Anim.SetBool("isWalkingRight", true);
             Anim.SetBool("isWalkingLeft", false);
+            Anim.SetBool("isWalkingBack", false);
+            Anim.SetBool("Shoot", false);
+            ReadytoDrill = false;
+            movespeed = 5;
         }
 
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D) &&  LM.IsthereaDrone == false)
         {
             Anim.SetBool("isDrilling", false);
             Anim.SetBool("isWalking", false);
             Anim.SetBool("isWalkingRight", false);
             Anim.SetBool("isWalkingLeft", true);
+            Anim.SetBool("isWalkingBack", false);
+            Anim.SetBool("Shoot", false);
+            ReadytoDrill = false;
+            movespeed = 5;
+        }
+
+        else if (Input.GetKey(KeyCode.S) && LM.IsthereaDrone == false)
+        {
+            Anim.SetBool("isDrilling", false);
+            Anim.SetBool("isWalking", false);
+            Anim.SetBool("isWalkingRight", false);
+            Anim.SetBool("isWalkingLeft", false);
+            Anim.SetBool("isWalkingBack", true);
+            Anim.SetBool("Shoot", false);
+            ReadytoDrill = false;
+            movespeed = 5;
         }
 
         else 
@@ -180,6 +233,10 @@ public class PlayerController : MonoBehaviour {
             Anim.SetBool("isWalking", false);
             Anim.SetBool("isWalkingRight", false);
             Anim.SetBool("isWalkingLeft", false);
+            Anim.SetBool("isWalkingBack", false);
+            Anim.SetBool("Shoot", false);
+            ReadytoDrill = false;
+
         }
 
 
@@ -188,6 +245,12 @@ public class PlayerController : MonoBehaviour {
         {
             Drone.SetActive(true);
             movespeed = 0;
+            Anim.SetBool("isDrilling", false);
+            Anim.SetBool("isWalking", false);
+            Anim.SetBool("isWalkingRight", false);
+            Anim.SetBool("isWalkingLeft", false);
+            Anim.SetBool("isWalkingBack", false);
+            Anim.SetBool("Shoot", false);
         }
 
 
@@ -202,7 +265,10 @@ public class PlayerController : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        Move();
+        if (LM.IsthereaDrone == false)
+        {
+            Move();
+        }
     }
 
     void Move()
@@ -215,6 +281,22 @@ public class PlayerController : MonoBehaviour {
 
         
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Crystal")
+        {
+            touchingCrystal = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Crystal")
+        {
+            touchingCrystal = false;
+        }
+    }
+
 
 
 }
