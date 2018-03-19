@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour {
         Canister1hasbeenused = false;
         isCanister1beingused = false;
 
-        Anim = FindObjectOfType<Animator>();
+        Anim = GetComponent<Animator>();
         
 
  
