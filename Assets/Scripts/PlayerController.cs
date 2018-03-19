@@ -146,18 +146,28 @@ public class PlayerController : MonoBehaviour {
         {
             Anim.SetBool("isDrilling", true);
             Anim.SetBool("isWalking", false);
+            Anim.SetBool("isWalkingRight", false);
         }
 
        else if (Input.GetKey(KeyCode.W))
         {
             Anim.SetBool("isWalking", true);
             Anim.SetBool("isDrilling", false);
+            Anim.SetBool("isWalkingRight", false);
+        }
+
+        else if (Input.GetKey(KeyCode.A))
+        {
+            Anim.SetBool("isWalking", false);
+            Anim.SetBool("isDrilling", false);
+            Anim.SetBool("isWalkingRight", true);
         }
 
         else
         {
             Anim.SetBool("isDrilling", false);
             Anim.SetBool("isWalking", false);
+            Anim.SetBool("isWalkingRight", false);
         }
 
 
