@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{cb71b5a1-468e-46e2-a08d-6facf9f26b7c}">
+        <property name="assetPath">
+            <value>352915__sandufi__sub.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>8.8888888888888893</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{bd571bb1-13ab-419f-84cc-11e7a68ea8b3}</destination>
+        </relationship>
+    </object>
+</objects>

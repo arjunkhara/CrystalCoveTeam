@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{ac7fefcf-47df-48ff-b881-247e07812d1a}">
+        <property name="assetPath">
+            <value>170758__esperar__bee-buzz-3.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>1</value>
+        </property>
+        <property name="length">
+            <value>16.81124716553288</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{bd571bb1-13ab-419f-84cc-11e7a68ea8b3}</destination>
+        </relationship>
+    </object>
+</objects>
