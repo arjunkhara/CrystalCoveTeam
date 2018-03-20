@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour {
         BoostOne();
         BoostTwo();
 
-        if (Input.GetMouseButton(1) && Input.GetMouseButton(2) && LM.IsthereaDrone == false && DE.OurEnergy ==100)
+        if (Input.GetMouseButton(1) && Input.GetMouseButton(2) && LM.IsthereaDrone == false && DE.OurEnergy == 100)
         {
             Anim.SetBool("isDrilling", false);
             Anim.SetBool("isWalking", false);
