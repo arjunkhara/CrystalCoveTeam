@@ -47,7 +47,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1056476267848418
 GameObject:
   m_ObjectHideFlags: 1
@@ -666,7 +666,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1055494559604932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.13, y: 2.66, z: 1.72}
+  m_LocalPosition: {x: 22.5, y: 5.42, z: 5.7}
   m_LocalScale: {x: 59.98363, y: 59.983635, z: 59.983635}
   m_Children:
   - {fileID: 4778408830737264}
@@ -1157,7 +1157,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &65876997789487602
 BoxCollider:
@@ -1206,7 +1206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e66e26e417ae1c47babf551bd08b774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axes: 0
+  axes: 1
   sensitivityX: 15
   sensitivityY: 15
   minimumX: -45
@@ -1226,10 +1226,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingenergy: 0
   OurEnergy: 0
-  EnergySlider: {fileID: 0}
-  FillImage: {fileID: 0}
-  m_FullHealthColor: {r: 0, g: 1, b: 0, a: 1}
-  m_ZeroHealthColor: {r: 1, g: 0, b: 0, a: 1}
   SpawnPulse: {fileID: 4057785972596654}
   PulseClone: {fileID: 1523461795303822, guid: c22c55145c2aeca49883b53310fe2301, type: 2}
   isFiring: 0
@@ -1249,6 +1245,7 @@ MonoBehaviour:
   Drone: {fileID: 0}
   ReadytoDrill: 0
   touchingCrystal: 0
+  DroneCanvas: {fileID: 0}
   Canister1hasbeenused: 0
   isCanister1beingused: 0
   TimeofBoost: 2

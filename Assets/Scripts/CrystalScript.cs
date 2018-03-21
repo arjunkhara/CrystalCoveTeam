@@ -8,6 +8,9 @@ public class CrystalScript : MonoBehaviour {
     PlayerController PC;
     DrillEnergy DE;
 
+
+
+
 	
 	void Start () {
         Timer = 3;

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.UI;
+using UnityEngine.UI;
 
 public class SpaceShip : MonoBehaviour {
 
@@ -21,9 +23,21 @@ public class SpaceShip : MonoBehaviour {
     private float tiltAmountSideways;
     private float tiltAmountVelocity;
 
+    public float StartingEnergy = 100;
+    public float DroneEnergy;
+    public Slider EnergySlider;
+    public Image FillImage;
+    public Color m_FullHealthColor = Color.green;
+    public Color m_ZeroHealthColor = Color.red;
+
+
+
+
     private void Start()
     {
+        EnergyUI();
         RB = GetComponent<Rigidbody>();
+        DroneEnergy = StartingEnergy;
     }
 
     private void MovementUpDown()
@@ -73,7 +87,7 @@ public class SpaceShip : MonoBehaviour {
 
     private void FixedUpdate()
     {
-
+        EnergyUI();
         MovementUpDown();
         MovementForward();
         Rotation();
@@ -81,6 +95,7 @@ public class SpaceShip : MonoBehaviour {
         Swerve();
         RB.AddRelativeForce(Vector3.up * upForce * Time.deltaTime);
         RB.rotation = Quaternion.Euler(new Vector3(tiltAmountForward, currentYRotation, tiltAmountSideways));
+        DroneEnergy -= 10 * Time.deltaTime;
     }
 
     void Swerve()
@@ -118,6 +133,9 @@ public class SpaceShip : MonoBehaviour {
             RB.velocity = Vector3.SmoothDamp(RB.velocity, Vector3.zero, ref velocityToSmoothDampToZero, 0.95f);
         }
 
+    }
+    void EnergyUI() {
+        EnergySlider.value = DroneEnergy;
     }
 
 

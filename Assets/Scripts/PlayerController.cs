@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour {
 
     DrillEnergy DE;
 
+    public Canvas DroneCanvas;
+
+
 
 
 
@@ -47,6 +50,8 @@ public class PlayerController : MonoBehaviour {
 
     private void Awake()
     {
+
+        DroneCanvas.enabled = false;
         rb = GetComponent<Rigidbody>();
         MovementInputValue = 0f;
         LeftRightInputValue = 0f;
@@ -245,8 +250,11 @@ public class PlayerController : MonoBehaviour {
 
         if (LM.IsthereaDrone == true)
         {
+
             Drone.SetActive(true);
+            DroneCanvas.enabled = true;
             movespeed = 0;
+            
             Anim.SetBool("isDrilling", false);
             Anim.SetBool("isWalking", false);
             Anim.SetBool("isWalkingRight", false);
@@ -259,6 +267,7 @@ public class PlayerController : MonoBehaviour {
         else
         {
             Drone.SetActive(false);
+            DroneCanvas.enabled = false;
         }
         MovementInputValue = Input.GetAxis(MovementAxisName);
         LeftRightInputValue = Input.GetAxis(LeftRightAxisName);
