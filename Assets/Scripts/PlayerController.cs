@@ -175,6 +175,8 @@ public class PlayerController : MonoBehaviour {
             Anim.SetBool("Shoot", false);
             ReadytoDrill = true;
             movespeed = 0;
+
+
         }
 
        else if (Input.GetKey(KeyCode.W) && LM.IsthereaDrone == false)
@@ -282,14 +284,23 @@ public class PlayerController : MonoBehaviour {
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Crystal")
         {
             touchingCrystal = true;
         }
     }
-    private void OnTriggerExit(Collider other)
+
+    private void OnCollisionStay(Collision other)
+    {
+        if (other.gameObject.tag == "Crystal")
+        {
+            touchingCrystal = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision other)
     {
         if (other.gameObject.tag == "Crystal")
         {

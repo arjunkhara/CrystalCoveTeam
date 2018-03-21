@@ -7,7 +7,6 @@ public class EnemyChase : MonoBehaviour
 {
 
     public Transform player;
-    public Transform Hologram;
   
     public float playerDistance;
     public float HologramDistance;
@@ -33,7 +32,7 @@ public class EnemyChase : MonoBehaviour
     {
         MP = GetComponent<MonsterPatrol>();
         Enemy.transform.position = SpawnPoint.transform.position;
-        HGM = FindObjectOfType<Hologram>();
+ 
         PassiveEnemyAnimator = GetComponent<Animator>();
 
 
@@ -51,29 +50,25 @@ public class EnemyChase : MonoBehaviour
 
 
         playerDistance = Vector3.Distance(player.position, transform.position);
-        HologramDistance = Vector3.Distance(Hologram.position, transform.position);
+      
 
 
-        if(HologramDistance < lookDistance && HGM.HoloisOn == true)
-        {
-            LookatHologram();
-     
-        }
+       
 
 
-        if (playerDistance < lookDistance && HGM.HoloisOn == false)
+        if (playerDistance < lookDistance)
         {
             lookAtPlayer();
     
         }
 
-        if (playerDistance < chaseDistance && HGM.HoloisOn == false || HologramDistance < chaseDistance && HGM.HoloisOn == false)
+        if (playerDistance < chaseDistance)
         {
             chase();
            
         }
 
-        if (playerDistance > stopChaseDistance && Enemy.transform.position != SpawnPoint.transform.position || HologramDistance > stopChaseDistance && Enemy.transform.position != SpawnPoint.transform.position)
+        if (playerDistance > stopChaseDistance && Enemy.transform.position != SpawnPoint.transform.position)
         {
             MP.enabled = true;
             PassiveEnemyAnimator.SetBool("IsItIdle", true);
@@ -92,14 +87,7 @@ public class EnemyChase : MonoBehaviour
     }
 
 
-    void LookatHologram()
-    {
-        Quaternion rotation = Quaternion.LookRotation(Hologram.position - transform.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationDampling);
-        PassiveEnemyAnimator.SetBool("IsItIdle", true);
-        PassiveEnemyAnimator.SetBool("IsItWalking", false);
-    }
-
+   
 
 
     void chase()

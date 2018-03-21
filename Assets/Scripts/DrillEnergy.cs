@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class DrillEnergy : MonoBehaviour {
 
     public int startingenergy = 0;
-    public int OurEnergy;
+    public float OurEnergy;
     public Slider EnergySlider;
     public Image FillImage;
     public Color m_FullHealthColor = Color.green;

@@ -5,20 +5,20 @@ using UnityEngine;
 public class CrystalScript : MonoBehaviour {
 
     public float Timer;
-    Drill DrillScript;
-    DrillEnergy DrillEnergyScript;
+    PlayerController PC;
+    DrillEnergy DE;
 
 	
 	void Start () {
         Timer = 3;
-        DrillScript = FindObjectOfType<Drill>();
-        DrillEnergyScript = FindObjectOfType<DrillEnergy>();
+        PC = FindObjectOfType<PlayerController>();
+        DE = FindObjectOfType<DrillEnergy>();
 		
 	}
 	
 
 	void Update () {
-        if (DrillScript.Readytodrill == true && DrillScript.isdrilling == true)
+        if (PC.ReadytoDrill == true && PC.touchingCrystal == true)
         {
             Timer -= Time.deltaTime;
         }
@@ -31,7 +31,7 @@ public class CrystalScript : MonoBehaviour {
         if(Timer <= 0)
         {
             Debug.Log("Crystal Destroyed");
-            DrillEnergyScript.OurEnergy += 10;
+            DE.OurEnergy += 10 *Time.deltaTime ;
         }
 		
 
