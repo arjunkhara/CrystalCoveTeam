@@ -9149,8 +9149,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1182802258}
-  m_LocalRotation: {x: -0.00683465, y: 0.97826606, z: 0.032663096, w: 0.20465097}
-  m_LocalPosition: {x: 34.26325, y: -6.2337356, z: -76.77101}
+  m_LocalRotation: {x: 0.015161351, y: 0.964563, z: 0.05686307, w: -0.257206}
+  m_LocalPosition: {x: 46.684177, y: -5.5223546, z: -72.40129}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9421,10 +9421,6 @@ Prefab:
     - target: {fileID: 1214853564603934, guid: 9f61832793b0e7044ab68a7f796dff2b, type: 2}
       propertyPath: m_Name
       value: PassiveRockMonster (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4072277605688390, guid: 9f61832793b0e7044ab68a7f796dff2b, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 120.047005
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f61832793b0e7044ab68a7f796dff2b, type: 2}
@@ -13563,8 +13559,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1907975645}
-  m_LocalRotation: {x: -0.0051767374, y: 0.99309385, z: 0.048079953, w: 0.10689312}
-  m_LocalPosition: {x: 36.85778, y: -6.6826515, z: -77.63547}
+  m_LocalRotation: {x: -0.0063135023, y: 0.9841777, z: 0.0358235, w: 0.17341028}
+  m_LocalPosition: {x: 45.520927, y: -5.8136616, z: -68.95082}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
