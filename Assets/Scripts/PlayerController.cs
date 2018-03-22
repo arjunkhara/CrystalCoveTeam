@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour {
     DrillEnergy DE;
 
     public Canvas DroneCanvas;
+    SpaceShip SS;
 
 
 
@@ -66,6 +67,7 @@ public class PlayerController : MonoBehaviour {
         touchingCrystal = false;
 
         DE = GetComponent<DrillEnergy>();
+        SS = FindObjectOfType<SpaceShip>();
         
 
  
@@ -262,6 +264,8 @@ public class PlayerController : MonoBehaviour {
             Anim.SetBool("isWalkingBack", false);
             Anim.SetBool("Shoot", false);
         }
+
+     
 
 
         else

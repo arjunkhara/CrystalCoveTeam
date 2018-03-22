@@ -45,5 +45,15 @@ public class LevelManager : MonoBehaviour {
         }
 
 
+        if(SS.DroneEnergy <= 0 && IsthereaDrone == true)
+        {
+           IsthereaDrone = false;
+           PC.Drone.SetActive(false);
+           PC.DroneCanvas.enabled = false;
+
+        }
+
+
+
     }
 }

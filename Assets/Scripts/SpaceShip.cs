@@ -98,6 +98,14 @@ public class SpaceShip : MonoBehaviour {
         DroneEnergy -= 10 * Time.deltaTime;
     }
 
+
+    private void Update()
+    {
+        if(DroneEnergy <= 0)
+        {
+            DroneEnergy = 0;
+        }
+    }
     void Swerve()
     {
         if(Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f)
