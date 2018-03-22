@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHP : MonoBehaviour {
 
@@ -9,6 +10,15 @@ public class PlayerHP : MonoBehaviour {
     public GameObject Sparks;
     public GameObject Smoke;
     public GameObject Fire;
+    public GameObject Explosion;
+
+    SpaceShip SS;
+    PlayerController PC;
+    MouseLook ML;
+    LevelManager LM;
+    Drill Drill;
+
+    public float Timer;
 
 
 	void Start () {
@@ -16,6 +26,13 @@ public class PlayerHP : MonoBehaviour {
         Sparks.SetActive(false);
         Smoke.SetActive(false);
         Fire.SetActive(false);
+        Explosion.SetActive(false);
+        Timer = 0;
+        SS = FindObjectOfType<SpaceShip>();
+        PC = GetComponent<PlayerController>();
+        ML = GetComponent<MouseLook>();
+        LM = GetComponent<LevelManager>();
+        Drill = GetComponent<Drill>();
 	}
 	
 	void Update () {
@@ -33,8 +50,25 @@ public class PlayerHP : MonoBehaviour {
         {
             Fire.SetActive(true);
         }
-		
-	}
+        if (count >= 4)
+        {
+            Explosion.SetActive(true);
+            LM.enabled = false;
+            PC.enabled = false;
+            SS.enabled = false;
+            ML.enabled = false;
+            Drill.enabled = false;
+            Timer += 1 * Time.deltaTime;
+
+
+        }
+
+        if(Timer >= 3)
+        {
+            SceneManager.LoadScene("Level 1");
+        }
+
+    }
 
     private void OnCollisionEnter(Collision other)
     {
