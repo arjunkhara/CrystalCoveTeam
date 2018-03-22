@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour {
     public Canvas DroneCanvas;
     SpaceShip SS;
 
-
+    public GameObject Sparks;
 
 
 
@@ -51,6 +51,8 @@ public class PlayerController : MonoBehaviour {
 
     private void Awake()
     {
+
+        Sparks.SetActive(false);
 
         DroneCanvas.enabled = false;
         rb = GetComponent<Rigidbody>();
@@ -169,6 +171,8 @@ public class PlayerController : MonoBehaviour {
             Anim.SetBool("Shoot", true);
             ReadytoDrill = false;
             movespeed = 0;
+            Sparks.SetActive(false);
+
         }
 
 
@@ -182,6 +186,7 @@ public class PlayerController : MonoBehaviour {
             Anim.SetBool("Shoot", false);
             ReadytoDrill = true;
             movespeed = 0;
+      
 
 
         }
@@ -196,6 +201,8 @@ public class PlayerController : MonoBehaviour {
             Anim.SetBool("Shoot", false);
             ReadytoDrill = false;
             movespeed = 5;
+            Sparks.SetActive(false);
+
 
 
         }
@@ -210,6 +217,8 @@ public class PlayerController : MonoBehaviour {
             Anim.SetBool("Shoot", false);
             ReadytoDrill = false;
             movespeed = 5;
+            Sparks.SetActive(false);
+
         }
 
         else if (Input.GetKey(KeyCode.D) &&  LM.IsthereaDrone == false)
@@ -222,6 +231,8 @@ public class PlayerController : MonoBehaviour {
             Anim.SetBool("Shoot", false);
             ReadytoDrill = false;
             movespeed = 5;
+            Sparks.SetActive(false);
+
         }
 
         else if (Input.GetKey(KeyCode.S) && LM.IsthereaDrone == false)
@@ -234,6 +245,8 @@ public class PlayerController : MonoBehaviour {
             Anim.SetBool("Shoot", false);
             ReadytoDrill = false;
             movespeed = 5;
+            Sparks.SetActive(false);
+
         }
 
         else 
@@ -245,6 +258,8 @@ public class PlayerController : MonoBehaviour {
             Anim.SetBool("isWalkingBack", false);
             Anim.SetBool("Shoot", false);
             ReadytoDrill = false;
+            Sparks.SetActive(false);
+
 
         }
 
@@ -263,9 +278,11 @@ public class PlayerController : MonoBehaviour {
             Anim.SetBool("isWalkingLeft", false);
             Anim.SetBool("isWalkingBack", false);
             Anim.SetBool("Shoot", false);
+            Sparks.SetActive(false);
+
         }
 
-     
+
 
 
         else
@@ -273,6 +290,19 @@ public class PlayerController : MonoBehaviour {
             Drone.SetActive(false);
             DroneCanvas.enabled = false;
         }
+
+
+        if(touchingCrystal == true && ReadytoDrill == true)
+        {
+            Sparks.SetActive(true);
+        }
+
+        else
+        {
+            Sparks.SetActive(false);
+        }
+
+
         MovementInputValue = Input.GetAxis(MovementAxisName);
         LeftRightInputValue = Input.GetAxis(LeftRightAxisName);
 
@@ -302,6 +332,7 @@ public class PlayerController : MonoBehaviour {
         if (other.gameObject.tag == "Crystal")
         {
             touchingCrystal = true;
+       
         }
     }
 

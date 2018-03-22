@@ -9,7 +9,6 @@ public class DrillEnergy : MonoBehaviour {
     public float OurEnergy;
 
 
-
     public Transform SpawnPulse;
     public GameObject PulseClone;
     public bool isFiring;
@@ -19,6 +18,7 @@ public class DrillEnergy : MonoBehaviour {
     void Start () {
         OurEnergy = startingenergy;
         isFiring = false;
+
 	}
 
     public void FirePulse()

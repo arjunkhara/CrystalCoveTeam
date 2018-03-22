@@ -9,8 +9,6 @@ public class CrystalScript : MonoBehaviour {
     DrillEnergy DE;
 
 
-
-
 	
 	void Start () {
         Timer = 3;
@@ -31,11 +29,18 @@ public class CrystalScript : MonoBehaviour {
             Timer = 3;
         }
 
-        if(Timer <= 0)
+        if(Timer < 0)
         {
-            Debug.Log("Crystal Destroyed");
+            
             DE.OurEnergy += 10 *Time.deltaTime ;
         }
+
+        if(Timer <= -0.5)
+        {
+            this.gameObject.SetActive(false);
+        }
+
+
 		
 
     }
