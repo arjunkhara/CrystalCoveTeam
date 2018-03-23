@@ -28,6 +28,9 @@ public class PlayerController : MonoBehaviour {
 
     public GameObject Sparks;
 
+    public bool touchingcrystal2;
+    public bool touchingcrystal3;
+
 
 
 
@@ -70,10 +73,14 @@ public class PlayerController : MonoBehaviour {
 
         DE = GetComponent<DrillEnergy>();
         SS = FindObjectOfType<SpaceShip>();
-        
 
- 
-    }
+
+        touchingcrystal2 = false;
+        touchingcrystal3 = false;
+
+
+
+}
 
     private void Start()
     {
@@ -334,14 +341,39 @@ public class PlayerController : MonoBehaviour {
             touchingCrystal = true;
        
         }
+
+        if (other.gameObject.tag == "Crystal2")
+        {
+            touchingcrystal2 = true;
+
+        }
+
+        if (other.gameObject.tag == "Crystal3")
+        {
+            touchingcrystal3 = true;
+
+        }
     }
 
     private void OnCollisionStay(Collision other)
     {
-        if (other.gameObject.tag == "Crystal")
+        if (other.gameObject.tag == "Crystal2")
+        {
+            touchingcrystal2 = true;
+        }
+
+        if (other.gameObject.tag == "Crystal2")
         {
             touchingCrystal = true;
         }
+
+        if (other.gameObject.tag == "Crystal3")
+        {
+            touchingcrystal3 = true;
+
+        }
+
+
     }
 
     private void OnCollisionExit(Collision other)
@@ -350,7 +382,18 @@ public class PlayerController : MonoBehaviour {
         {
             touchingCrystal = false;
         }
+        if (other.gameObject.tag == "Crystal2")
+        {
+            touchingcrystal2 = false;
+        }
+        if (other.gameObject.tag == "Crystal3")
+        {
+            touchingcrystal3 = true;
+
+        }
     }
+
+
 
 
 
