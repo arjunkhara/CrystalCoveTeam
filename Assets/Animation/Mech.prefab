@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 114463630424986210}
   m_Layer: 0
   m_Name: Mech
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -830,9 +830,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1055494559604932}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.5, y: 5.42, z: 5.7}
-  m_LocalScale: {x: 59.98363, y: 59.983635, z: 59.983635}
+  m_LocalRotation: {x: -0, y: 0.8346159, z: -0, w: 0.5508325}
+  m_LocalPosition: {x: 22.5, y: 5.42, z: 3.98}
+  m_LocalScale: {x: 40.21458, y: 40.21458, z: 40.21458}
   m_Children:
   - {fileID: 4778408830737264}
   - {fileID: 4315383734654778}
@@ -845,7 +845,7 @@ Transform:
   - {fileID: 4452519727168132}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 113.15201, z: 0}
 --- !u!4 &4158451557757410
 Transform:
   m_ObjectHideFlags: 1
@@ -1493,6 +1493,8 @@ MonoBehaviour:
   touchingCrystal: 0
   DroneCanvas: {fileID: 0}
   Sparks: {fileID: 1259683411189670}
+  touchingcrystal2: 0
+  touchingcrystal3: 0
   Canister1hasbeenused: 0
   isCanister1beingused: 0
   TimeofBoost: 2
@@ -1540,7 +1542,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 80cd13727314e7149a5d1df7515c05de, type: 3}
+  - {fileID: 2100000, guid: f6b7b159b334dfd47bc23b29d5d4ef28, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
