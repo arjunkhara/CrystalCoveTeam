@@ -61,7 +61,11 @@
             <destination>{1dedb6aa-bbf5-4d9a-ba70-2e574dd87bb5}</destination>
         </relationship>
     </object>
-    <object class="EventAutomatableProperties" id="{758733d4-2266-4282-aebb-98e691b0df20}"/>
+    <object class="EventAutomatableProperties" id="{758733d4-2266-4282-aebb-98e691b0df20}">
+        <property name="maxVoices">
+            <value>1</value>
+        </property>
+    </object>
     <object class="MarkerTrack" id="{5aa32292-434b-42bb-8545-cf2615795be5}"/>
     <object class="GroupTrack" id="{6b606d9d-944d-40a9-8ca9-0a5d7c6714f1}">
         <relationship name="modules">
@@ -392,7 +396,11 @@
     <object class="MixerBusPanner" id="{45aef26f-a9de-48c1-bfbf-5cc36a300b85}"/>
     <object class="ThreeEQEffect" id="{e0f2dede-b5aa-46e6-beb2-66dd5b56fa8d}"/>
     <object class="MixerBusFader" id="{63b3bbc5-9105-4f53-89a1-b482cfd705cf}"/>
-    <object class="SpatialiserEffect" id="{594f1ab8-c83f-4873-beb2-75ecc30fb689}"/>
+    <object class="SpatialiserEffect" id="{594f1ab8-c83f-4873-beb2-75ecc30fb689}">
+        <property name="distanceRolloffType">
+            <value>4</value>
+        </property>
+    </object>
     <object class="ThreeEQEffect" id="{e1d81b8d-046c-40f0-a4f8-1493b5dd3404}">
         <property name="lowGain">
             <value>5.5</value>

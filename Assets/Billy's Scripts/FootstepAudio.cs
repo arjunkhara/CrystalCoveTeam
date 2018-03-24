@@ -10,13 +10,13 @@ public class FootstepAudio : AudioEvent
 	void Update()
     {   timer += Time.deltaTime;
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S)) {
-            print("Hello");
+            
 
             if (timer > interval)
             {
                 PlaySound();
                 timer = 0f;
-                print("jjojo");
+
             }  
         }
 
