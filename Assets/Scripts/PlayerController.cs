@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour {
     private float MovementInputValue;
     private float LeftRightInputValue;
 
-    public GameObject Drone;
+  
     LevelManager LM;
 
     public bool ReadytoDrill;
@@ -25,6 +25,12 @@ public class PlayerController : MonoBehaviour {
 
     public Canvas DroneCanvas;
     SpaceShip SS;
+    public GameObject Drone;
+
+
+
+
+
 
 
 

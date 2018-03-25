@@ -30,7 +30,7 @@ public class SpaceShip : MonoBehaviour {
     public Color m_FullHealthColor = Color.green;
     public Color m_ZeroHealthColor = Color.red;
 
-
+ 
 
 
     private void Start()
@@ -38,7 +38,12 @@ public class SpaceShip : MonoBehaviour {
         EnergyUI();
         RB = GetComponent<Rigidbody>();
         DroneEnergy = StartingEnergy;
+
+   
     }
+    
+
+
 
     private void MovementUpDown()
     {

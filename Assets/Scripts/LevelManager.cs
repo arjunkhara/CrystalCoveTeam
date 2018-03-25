@@ -14,13 +14,21 @@ public class LevelManager : MonoBehaviour {
     SpaceShip SS;
 
 
+
+
+
+
+
     void Start()
     {
         PC = FindObjectOfType<PlayerController>();
         ML = FindObjectOfType<CameraRotation>();
         IsthereaDrone = false;
         SS = FindObjectOfType<SpaceShip>();
- 
+      
+
+
+
 
     }
 
@@ -28,12 +36,13 @@ public class LevelManager : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(2) && IsthereaDrone == false)
         {
-            SS.DroneEnergy = SS.StartingEnergy;
-            PlayerCamera.SetActive(false);
-            IsthereaDrone = true;
-            Drone.transform.position = SpawnDrone.transform.position;
-            ML.enabled = false;
- 
+        
+             SS.DroneEnergy = SS.StartingEnergy;
+             PlayerCamera.SetActive(false);
+             IsthereaDrone = true;
+             Drone.transform.position = SpawnDrone.transform.position;
+             ML.enabled = false;
+          
         }
 
         else if (IsthereaDrone == true && Input.GetMouseButtonUp(2)) {
@@ -41,6 +50,7 @@ public class LevelManager : MonoBehaviour {
             PlayerCamera.SetActive(true);
             ML.enabled = true;
             IsthereaDrone = false;
+
 
         }
 
