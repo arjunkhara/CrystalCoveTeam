@@ -32,6 +32,7 @@ public class CameraZoom : MonoBehaviour
         if(LM.IsthereaDrone == false)
         {
             timer = 1;
+            cam.fieldOfView = 0;
 
         }
         

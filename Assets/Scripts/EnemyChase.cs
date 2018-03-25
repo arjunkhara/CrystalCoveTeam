@@ -73,7 +73,11 @@ public class EnemyChase : MonoBehaviour
             MP.enabled = true;
             PassiveEnemyAnimator.SetBool("IsItIdle", true);
             PassiveEnemyAnimator.SetBool("IsItWalking", false);
+            PassiveEnemyAnimator.SetBool("IsItInRange", false);
         }
+
+
+
 
     }
 
@@ -84,6 +88,7 @@ public class EnemyChase : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationDampling);
         PassiveEnemyAnimator.SetBool("IsItIdle", true);
         PassiveEnemyAnimator.SetBool("IsItWalking", false);
+        PassiveEnemyAnimator.SetBool("IsItInRange", false);
     }
 
 
@@ -95,8 +100,41 @@ public class EnemyChase : MonoBehaviour
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
         PassiveEnemyAnimator.SetBool("IsItIdle", false);
         PassiveEnemyAnimator.SetBool("IsItWalking", true);
+        PassiveEnemyAnimator.SetBool("IsItInRange", false);
 
 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            PassiveEnemyAnimator.SetBool("IsItInRange", true);
+            PassiveEnemyAnimator.SetBool("IsItIdle", false);
+            PassiveEnemyAnimator.SetBool("IsItWalking", false);
+        }
+    }
+
+
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            PassiveEnemyAnimator.SetBool("IsItInRange", true);
+            PassiveEnemyAnimator.SetBool("IsItIdle", false);
+            PassiveEnemyAnimator.SetBool("IsItWalking", false);
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            PassiveEnemyAnimator.SetBool("IsItInRange", false);
+            PassiveEnemyAnimator.SetBool("IsItIdle", false);
+            PassiveEnemyAnimator.SetBool("IsItWalking", true);
+        }
     }
 }
 
