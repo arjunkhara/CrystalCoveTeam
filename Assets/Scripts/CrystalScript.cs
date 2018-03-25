@@ -7,7 +7,7 @@ public class CrystalScript : MonoBehaviour {
     public float Timer;
     PlayerController PC;
     DrillEnergy DE;
-    public GameObject crys;
+    public GameObject FracturedCrystal;
 
 
 	
@@ -38,7 +38,8 @@ public class CrystalScript : MonoBehaviour {
 
         if(Timer <= -0.5)
         {
-            crys.SetActive(false);
+            Instantiate(FracturedCrystal, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
 
 

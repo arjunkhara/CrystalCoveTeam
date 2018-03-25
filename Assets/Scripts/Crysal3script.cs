@@ -41,7 +41,8 @@ public class Crysal3script : MonoBehaviour {
 
         if (Timer <= -0.5)
         {
-            crys.SetActive(false);
+            Instantiate(crys, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
 
 

@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Crystal2script : MonoBehaviour {
+public class CrystalScript4 : MonoBehaviour
+{
 
 
     public float Timer;
     PlayerController PC;
     DrillEnergy DE;
-    public GameObject ShatteredCrystal;
-
+    public GameObject crys;
+    public bool touchingmech;
 
 
     void Start()
@@ -23,7 +24,7 @@ public class Crystal2script : MonoBehaviour {
 
     void Update()
     {
-        if (PC.ReadytoDrill == true && PC.touchingCrystal == true && PC.touchingcrystal2 == true)
+        if (PC.ReadytoDrill == true && PC.touchingCrystal == true && PC.touchingcrystal4 == true)
         {
             Timer -= Time.deltaTime;
         }
@@ -41,12 +42,8 @@ public class Crystal2script : MonoBehaviour {
 
         if (Timer <= -0.5)
         {
-            Instantiate(ShatteredCrystal, transform.position, transform.rotation);
+            Instantiate(crys, transform.position, transform.rotation);
             Destroy(gameObject);
         }
-
-
-
-
     }
 }
