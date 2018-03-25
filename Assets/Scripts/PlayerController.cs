@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour {
     public bool touchingcrystal2;
     public bool touchingcrystal3;
     public bool touchingcrystal4;
+    public bool touchingcrystal5;
 
 
 
@@ -346,6 +347,19 @@ public class PlayerController : MonoBehaviour {
             touchingcrystal3 = true;
 
         }
+
+
+        if (other.gameObject.tag == "Crystal4")
+        {
+            touchingcrystal3 = true;
+
+        }
+
+        if (other.gameObject.tag == "Crystal5")
+        {
+            touchingcrystal3 = true;
+
+        }
     }
 
     private void OnCollisionStay(Collision other)
@@ -366,6 +380,19 @@ public class PlayerController : MonoBehaviour {
 
         }
 
+        if (other.gameObject.tag == "Crystal4")
+        {
+            touchingcrystal3 = true;
+
+        }
+
+        if (other.gameObject.tag == "Crystal5")
+        {
+            touchingcrystal3 = true;
+
+        }
+
+
 
     }
 
@@ -381,7 +408,18 @@ public class PlayerController : MonoBehaviour {
         }
         if (other.gameObject.tag == "Crystal3")
         {
-            touchingcrystal3 = true;
+            touchingcrystal3 = false;
+
+        }
+        if (other.gameObject.tag == "Crystal4")
+        {
+            touchingcrystal3 = false;
+
+        }
+
+        if (other.gameObject.tag == "Crystal5")
+        {
+            touchingcrystal3 = false;
 
         }
     }

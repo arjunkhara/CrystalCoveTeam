@@ -1680,23 +1680,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 307290465}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &309054242 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100000, guid: aeb1fab4387902c46ad118dffd28d11f, type: 3}
-  m_PrefabInternal: {fileID: 591663581}
---- !u!114 &309054243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 309054242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83d9c3fc9998bbe45894452c2a665753, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Timer: 3
-  FracturedCrystal: {fileID: 0}
 --- !u!1001 &311829246
 Prefab:
   m_ObjectHideFlags: 0
@@ -2983,7 +2966,12 @@ Prefab:
       propertyPath: m_Name
       value: Bush_Large_01 (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 100004, guid: aeb1fab4387902c46ad118dffd28d11f, type: 3}
+      propertyPath: m_TagString
+      value: Crystal4
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6400002, guid: aeb1fab4387902c46ad118dffd28d11f, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: aeb1fab4387902c46ad118dffd28d11f, type: 3}
   m_IsPrefabParent: 0
 --- !u!4 &591663582 stripped
@@ -3006,6 +2994,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 13.708706, y: 10.89451, z: 15.243939}
   m_Center: {x: -0.16173457, y: 5.447255, z: 0.7135918}
+--- !u!114 &591663585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 591663583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edfcbe17295965647b4036b61d629695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Timer: 4
+  crys: {fileID: 1742862556012780, guid: 7d221fd688f06884bb3b84b2d10a090e, type: 2}
+  touchingmech: 0
 --- !u!1 &596884288
 GameObject:
   m_ObjectHideFlags: 0
@@ -3746,6 +3748,8 @@ MonoBehaviour:
   DroneCanvas: {fileID: 0}
   touchingcrystal2: 0
   touchingcrystal3: 0
+  touchingcrystal4: 0
+  touchingcrystal5: 0
   Canister1hasbeenused: 0
   isCanister1beingused: 0
   TimeofBoost: 2
@@ -3975,6 +3979,10 @@ Prefab:
     - target: {fileID: 400004, guid: aeb1fab4387902c46ad118dffd28d11f, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: aeb1fab4387902c46ad118dffd28d11f, type: 3}
+      propertyPath: m_TagString
+      value: Crystal2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aeb1fab4387902c46ad118dffd28d11f, type: 3}
@@ -4608,6 +4616,10 @@ Prefab:
     - target: {fileID: 100000, guid: aeb1fab4387902c46ad118dffd28d11f, type: 3}
       propertyPath: m_Name
       value: Bush_Large_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: aeb1fab4387902c46ad118dffd28d11f, type: 3}
+      propertyPath: m_TagString
+      value: Crystal5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aeb1fab4387902c46ad118dffd28d11f, type: 3}
@@ -6091,6 +6103,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -5.025
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: aeb1fab4387902c46ad118dffd28d11f, type: 3}
+      propertyPath: m_TagString
+      value: Crystal3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aeb1fab4387902c46ad118dffd28d11f, type: 3}
   m_IsPrefabParent: 0
@@ -7335,8 +7351,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1182802258}
-  m_LocalRotation: {x: 0.1901936, y: 0.6337859, z: 0.16480495, w: -0.73142403}
-  m_LocalPosition: {x: 37.586273, y: -25.382402, z: -50.47339}
+  m_LocalRotation: {x: 0.18236832, y: 0.81124204, z: 0.44518518, w: -0.33232272}
+  m_LocalPosition: {x: 30.203287, y: -13.0814085, z: -42.19343}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8107,24 +8123,6 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1 &1393182301 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1932462117676958, guid: f63ae2d1f6cfa4846be06afcb55c1c62,
-    type: 2}
-  m_PrefabInternal: {fileID: 968709177}
---- !u!114 &1393182305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1393182301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e543cb4360a28994b926c7d3014be396, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyedVersion: {fileID: 1742862556012780, guid: 7d221fd688f06884bb3b84b2d10a090e,
-    type: 2}
 --- !u!1001 &1402558441
 Prefab:
   m_ObjectHideFlags: 0
@@ -8645,7 +8643,19 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: aeb1fab4387902c46ad118dffd28d11f, type: 3}
   m_PrefabInternal: {fileID: 836316366}
---- !u!114 &1462896326
+--- !u!65 &1462896326
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1462896325}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1462896327
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -8653,11 +8663,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1462896325}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83d9c3fc9998bbe45894452c2a665753, type: 3}
+  m_Script: {fileID: 11500000, guid: fe183ba55d9aea74dbabb218c1ccf6bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 3
-  FracturedCrystal: {fileID: 0}
+  Timer: 0
+  crys: {fileID: 1742862556012780, guid: 7d221fd688f06884bb3b84b2d10a090e, type: 2}
+  touchingmech: 0
 --- !u!1001 &1463043833
 Prefab:
   m_ObjectHideFlags: 0
