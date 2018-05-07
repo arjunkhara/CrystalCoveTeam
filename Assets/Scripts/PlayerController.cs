@@ -27,20 +27,10 @@ public class PlayerController : MonoBehaviour {
     SpaceShip SS;
     public GameObject Drone;
 
-
-
-
-
-
-
-
     public bool touchingcrystal2;
     public bool touchingcrystal3;
     public bool touchingcrystal4;
     public bool touchingcrystal5;
-
-
-
 
     public bool Canister1hasbeenused;
     public bool isCanister1beingused;
