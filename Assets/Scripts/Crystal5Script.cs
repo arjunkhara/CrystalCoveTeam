@@ -8,7 +8,7 @@ public class Crystal5Script : MonoBehaviour {
     PlayerController PC;
     DrillEnergy DE;
     public GameObject crys;
-    public bool touchingmech;
+
 
 
     void Start()
@@ -22,7 +22,7 @@ public class Crystal5Script : MonoBehaviour {
 
     void Update()
     {
-        if (PC.ReadytoDrill == true && PC.touchingCrystal == true && PC.touchingcrystal5 == true)
+        if (PC.ReadytoDrill == true  && PC.touchingcrystal5 == true)
         {
             Timer -= Time.deltaTime;
         }

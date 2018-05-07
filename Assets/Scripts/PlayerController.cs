@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour {
     public bool touchingcrystal3;
     public bool touchingcrystal4;
     public bool touchingcrystal5;
+    public bool touchingcrystal7;
 
     public bool Canister1hasbeenused;
     public bool isCanister1beingused;
@@ -75,10 +76,11 @@ public class PlayerController : MonoBehaviour {
 
         touchingcrystal2 = false;
         touchingcrystal3 = false;
+        touchingcrystal4 = false;
+        touchingcrystal5 = false;
 
 
-
-}
+    }
 
     private void Start()
     {
@@ -347,13 +349,19 @@ public class PlayerController : MonoBehaviour {
 
         if (other.gameObject.tag == "Crystal4")
         {
-            touchingcrystal3 = true;
+            touchingcrystal4 = true;
 
         }
 
         if (other.gameObject.tag == "Crystal5")
         {
-            touchingcrystal3 = true;
+            touchingcrystal5 = true;
+
+        }
+
+        if (other.gameObject.tag == "Crystal7")
+        {
+            touchingcrystal7= true;
 
         }
     }
@@ -365,7 +373,7 @@ public class PlayerController : MonoBehaviour {
             touchingcrystal2 = true;
         }
 
-        if (other.gameObject.tag == "Crystal2")
+        if (other.gameObject.tag == "Crystal")
         {
             touchingCrystal = true;
         }
@@ -378,13 +386,18 @@ public class PlayerController : MonoBehaviour {
 
         if (other.gameObject.tag == "Crystal4")
         {
-            touchingcrystal3 = true;
+            touchingcrystal4 = true;
 
         }
 
         if (other.gameObject.tag == "Crystal5")
         {
-            touchingcrystal3 = true;
+            touchingcrystal4 = true;
+
+        }
+        if (other.gameObject.tag == "Crystal7")
+        {
+            touchingcrystal5 = true;
 
         }
 
@@ -414,6 +427,12 @@ public class PlayerController : MonoBehaviour {
         }
 
         if (other.gameObject.tag == "Crystal5")
+        {
+            touchingcrystal3 = false;
+
+        }
+
+        if (other.gameObject.tag == "Crystal7")
         {
             touchingcrystal3 = false;
 

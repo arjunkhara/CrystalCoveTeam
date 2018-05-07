@@ -10,7 +10,7 @@ public class CrystalScript4 : MonoBehaviour
     PlayerController PC;
     DrillEnergy DE;
     public GameObject crys;
-    public bool touchingmech;
+
 
 
     void Start()
